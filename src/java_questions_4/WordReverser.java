@@ -3,6 +3,9 @@ package java_questions_4;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * Reverse words in a sentence without using for loop and string and stringbuilder functions
+ */
 public class WordReverser {
 
     public static void main(String[] args) {

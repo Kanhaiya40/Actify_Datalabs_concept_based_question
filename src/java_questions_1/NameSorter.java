@@ -1,5 +1,8 @@
 package java_questions_1;
 
+/**
+ * Entity Class
+ */
 public class NameSorter implements Comparable{
 
     private int id;

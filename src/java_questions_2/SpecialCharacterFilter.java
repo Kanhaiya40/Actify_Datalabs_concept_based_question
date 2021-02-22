@@ -2,6 +2,9 @@ package java_questions_2;
 
 import java.util.ArrayList;
 
+/**
+ * Filter the special character elements from the above list using java8.
+ */
 public class SpecialCharacterFilter {
 
     public static void main(String[] args) {

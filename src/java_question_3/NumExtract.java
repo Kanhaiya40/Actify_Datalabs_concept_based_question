@@ -2,6 +2,9 @@ package java_question_3;
 
 import java.util.ArrayList;
 
+/**
+ * Extract numbers and find the smallest number from the below string “asdsdgbdfgjdfgn6sbdfh3hhj5j1jh5j66asryuop8ng2nb7mbb8k;0++)O)”
+ */
 public class NumExtract {
 
     public static void main(String[] args) {

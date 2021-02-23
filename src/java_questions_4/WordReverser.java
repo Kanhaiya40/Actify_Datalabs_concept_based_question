@@ -1,7 +1,7 @@
 package java_questions_4;
 
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Stack;
 
 /**
  * Reverse words in a sentence without using
@@ -13,36 +13,35 @@ public class WordReverser {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         char[] toChar = input.toCharArray();
-        Stack<String> words = new Stack<>();
-        Stack<String> output = reverseString(toChar, words, 0);
-        StringBuilder originalOutput = new StringBuilder();
-        while (!output.isEmpty()) {
-            originalOutput.append(output.pop()).append(" ");
-        }
-        System.out.println(originalOutput.toString());
+        char[] output = reverseString(toChar);
+        String out = Arrays.toString(output).replace(", ", "")
+                .replace("[", "")
+                .replace("]", "");
+        System.out.println(out);
     }
 
-    private static Stack<String> reverseString(char[] toChar, Stack<String> words, int index) {
-        StringBuilder word = new StringBuilder();
-        int startIndex = index;
+    private static char[] reverseString(char[] toChar) {
+        char[] output = new char[toChar.length];
+        int startIndex = 0;
         int lastIndex = startIndex;
         while (true) {
             if (lastIndex == toChar.length) {
+                int k = lastIndex;
                 while (startIndex != lastIndex) {
-                    word.append(toChar[startIndex++]);
+                    output[startIndex++] = toChar[--k];
                 }
-                words.push(word.toString());
                 break;
             } else if (toChar[lastIndex] == ' ') {
+                int k = lastIndex;
                 while (startIndex != lastIndex) {
-                    word.append(toChar[startIndex++]);
+                    output[startIndex++] = toChar[--k];
                 }
-                words.push(word.toString());
-                reverseString(toChar, words, startIndex + 1);
-                break;
+                output[startIndex] = toChar[lastIndex];
+                lastIndex++;
+                startIndex = lastIndex;
             } else
                 lastIndex++;
         }
-        return words;
+        return output;
     }
 }
